@@ -1,0 +1,45 @@
+#navbar > ul {
+    list-style:none;
+    position: absolute;
+    left: 2.89%;
+    right: 2.89%;
+    top: 1.8%;
+    bottom: 89.2%;
+    display: flex;
+    background: rgba(17, 159, 204, 0.53);
+    font-style: oblique;
+    font-weight: bold;
+}
+#navbar > ul > li {
+    padding: 2%;
+}
+#name {
+    position: absolute;
+    left: 31.33%;
+    right: 31.33%;
+    top: 14.13%;
+    bottom: 82.13%;
+    text-align: center;
+    font-family: Futura;
+    font-style: oblique;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 58px;
+}
+#picture {
+    position: absolute;
+    left: 42.83%;
+    right: 42.83%;
+    top: 30.27%;
+    bottom: 58.87%;
+    mix-blend-mode: normal;
+    background: url(Fire-icon.png);
+    border-radius: 1000px;
+}
+#content {
+    position: absolute;
+    left: 8.05%;
+    right: 8.05%;
+    top: 45%;
+    background: aquamarine;
+}
