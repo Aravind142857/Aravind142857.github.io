@@ -2,6 +2,11 @@
   "name": "myWebsite",
   "version": "1.0.0",
   "dependencies": {
+    "cassandra-driver": "^4.6.4",
     "html-react-parser": "^3.0.16"
+  },
+  "devDependencies": {
+    "daisyui": "^3.2.1",
+    "tailwindcss": "^3.3.3"
   }
 }

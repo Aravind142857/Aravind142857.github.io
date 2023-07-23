@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer components {
+    .btn-nav {
+        @apply border-[#fdc500] text-[#fdc500] hover:bg-[#fdc500] hover:text-[#00296b];
+    }
+}
+@font-face {
+    font-family: "Caudex";
+    src: url('../fonts/Caudex/Caudex-Regular.ttf');
+}
+@font-face {
+    font-family: "Bodoni_Moda";
+    src: url('../fonts/Bodoni_Moda/BodoniModa-VariableFont_opsz,wght.ttf');
+}
+@font-face {
+    font-family: "Urbanist";
+    src: url('../fonts/Urbanist/Urbanist-VariableFont_wght.ttf');
+}
