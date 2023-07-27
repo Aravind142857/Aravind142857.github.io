@@ -105,11 +105,13 @@ class App extends React.Component {
 
     render() {
         return (
-            <div className="page-container bg-gray-400 py-8">
+            <div className="page-container py-8">
                 <ul>
                     {/**Courses should be listed below while following the syntax from the examples*/}
 
-                    <li><BlogCard course="MATH 53" image={"./images/Math53.gif"} semester={"Fall 2021"} description={"Some sample text to demonstrate how these cards will work, including how they truncate long sentences. This section displays the full-length blog post."} /></li>
+                    <li><BlogCard course="MATH 53" image={"./images/Math53.gif"} semester={"Fall 2021"} description={"Multivariate Calculus: Interesting topic: Advice: Brush up on high school calculus. " +
+                        "Rate professor: " +
+                        "Difficult Aspect: "} /></li>
                     <li><BlogCard course="ANTHRO 1" image={"./images/Anthro1.jpeg"} semester={"Fall 2021"} description={"Some sample text to demonstrate how these cards will work, including how they truncate long sentences. This section displays the full-length blog post."} /></li>
                     <li><BlogCard course="CHEM 1A" image={"./images/cs88.jpeg"} semester={"Fall 2021"} description={"Some sample text to demonstrate how these cards will work, including how they truncate long sentences. This section displays the full-length blog post."} /></li>
                     <li><BlogCard course="MATH 54" image={"./images/cs88.jpeg"} semester={"Spring 2022"} description={"Some sample text to demonstrate how these cards will work, including how they truncate long sentences. This section displays the full-length blog post."} /></li>

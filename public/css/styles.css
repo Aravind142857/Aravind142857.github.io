@@ -1,5 +1,5 @@
 :root {
-    --new-white: rgb(248, 246, 234);
+    --new-white: #003f88;
     --text-margin: 10px;
 }
 body {
@@ -75,6 +75,7 @@ body {
     transform: rotateY(-180deg);
     padding: 20px;
     font-size: 20px;
+    color: #fdc500;
     /* back tile styles go here! */
 }
 .card-container .image-container {
@@ -109,12 +110,14 @@ body {
     margin-top: var(--text-margin);
     margin-bottom: 5px;
     font-size: 20px;
+    color: #fdc500;
 }
 .card-container .main-area .blog-post .read-more {
     font-size: 20px;
     position: relative;
     bottom: 0px;
     text-align: right;
+    color: #fdc500;
 }
 .card-container .main-area .blog-post .blog-content {
     height: 90%;
@@ -124,6 +127,7 @@ body {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    color: #fdc500;
 }
 
 
