@@ -5,6 +5,9 @@
     .btn-nav {
         @apply border-[#fdc500] text-[#fdc500] hover:bg-[#fdc500] hover:text-[#00296b];
     }
+    .swap-flip {
+        transition-duration: 700ms;
+    }
 }
 @font-face {
     font-family: "Caudex";
