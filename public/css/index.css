@@ -8,6 +8,13 @@
     .swap-flip {
         transition-duration: 700ms;
     }
+    .nested {
+        @apply pl-5 border-l-2 border-dashed border-l-black;
+    }
+    .list-header {
+        @apply border-[1px] border-dashed border-gray-500 w-fit ml-2 my-2 p-1 rounded-lg hover:bg-gray-700 hover:text-white cursor-pointer hover:scale-110;
+
+    }
 }
 @font-face {
     font-family: "Caudex";
