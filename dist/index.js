@@ -147,9 +147,9 @@ function Header() {
   }, /*#__PURE__*/React.createElement("path", {
     d: "M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z"
   })), /*#__PURE__*/React.createElement("div", {
-    className: "swap-on dropdown dropdown-open bg-transparent"
+    className: "swap-on dropdown dropdown-open"
   }, /*#__PURE__*/React.createElement("svg", {
-    className: "swap-on fill-white group-hover:fill-black",
+    className: "fill-white group-hover:fill-black",
     xmlns: "http://www.w3.org/2000/svg",
     width: "32",
     height: "32",
@@ -158,24 +158,24 @@ function Header() {
     points: "400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49"
   })), /*#__PURE__*/React.createElement("ul", {
     tabIndex: "0",
-    className: "menu dropdown-content z-[1] p-2 ml-0 shadow bg-green-100 dark:bg-gray-800 rounded-box w-36 mt-4"
+    className: "menu dropdown-content z-[1] p-2 ml-0 shadow bg-[#003f88] dark:bg-gray-800 text-[#fdc500] rounded-box w-36 mt-4"
   }, /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
-    className: "text-emerald-700 brightness-125 dark:text-emerald-400 dark:hover:text-white",
+    className: "dark:text-emerald-400 dark:hover:text-white",
     href: "./courses.html"
   }, "Courses")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
-    className: "text-emerald-700 brightness-125 dark:text-emerald-400 dark:hover:text-white",
+    className: "dark:text-emerald-400 dark:hover:text-white",
     href: "./projects.html"
   }, "Projects")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
-    className: "text-emerald-700 brightness-125 dark:text-emerald-400 dark:hover:text-white",
+    className: "dark:text-emerald-400 dark:hover:text-white",
     href: "./skills.html"
   }, "Skills")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
-    className: "text-emerald-700 brightness-125 dark:text-emerald-400 dark:hover:text-white",
+    className: "dark:text-emerald-400 dark:hover:text-white",
     href: "./files/resume.pdf"
   }, "Resume")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
-    className: "text-emerald-700 brightness-125 dark:text-emerald-400 dark:hover:text-white",
+    className: "dark:text-emerald-400 dark:hover:text-white",
     href: "./index.html#foot"
   }, "Links")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
-    className: "text-emerald-700 brightness-125 dark:text-emerald-400 dark:hover:text-white",
+    className: "dark:text-emerald-400 dark:hover:text-white",
     href: "./code.html"
   }, "Code"))))), /*#__PURE__*/React.createElement("div", {
     className: "w-auto h-auto m-2"

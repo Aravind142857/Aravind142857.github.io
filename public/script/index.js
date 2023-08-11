@@ -22,31 +22,31 @@ function Header() {
                      viewBox="0 0 512 512">
                     <path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z"/>
                 </svg>
-                <div className="swap-on dropdown dropdown-open bg-transparent">
-                    <svg className="swap-on fill-white group-hover:fill-black" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                <div className="swap-on dropdown dropdown-open">
+                    <svg className="fill-white group-hover:fill-black" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
                          viewBox="0 0 512 512">
                         <polygon
                             points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49"/>
                     </svg>
                     <ul tabIndex="0"
-                        className="menu dropdown-content z-[1] p-2 ml-0 shadow bg-green-100 dark:bg-gray-800 rounded-box w-36 mt-4">
+                        className="menu dropdown-content z-[1] p-2 ml-0 shadow bg-[#003f88] dark:bg-gray-800 text-[#fdc500] rounded-box w-36 mt-4">
                         <li><a
-                            className="text-emerald-700 brightness-125 dark:text-emerald-400 dark:hover:text-white" href={"./courses.html"}>Courses</a>
+                            className="dark:text-emerald-400 dark:hover:text-white" href={"./courses.html"}>Courses</a>
                         </li>
                         <li><a
-                            className="text-emerald-700 brightness-125 dark:text-emerald-400 dark:hover:text-white" href={"./projects.html"}>Projects</a>
+                            className="dark:text-emerald-400 dark:hover:text-white" href={"./projects.html"}>Projects</a>
                         </li>
                         <li><a
-                            className="text-emerald-700 brightness-125 dark:text-emerald-400 dark:hover:text-white" href={"./skills.html"}>Skills</a>
+                            className="dark:text-emerald-400 dark:hover:text-white" href={"./skills.html"}>Skills</a>
                         </li>
                         <li><a
-                            className="text-emerald-700 brightness-125 dark:text-emerald-400 dark:hover:text-white" href={"./files/resume.pdf"}>Resume</a>
+                            className="dark:text-emerald-400 dark:hover:text-white" href={"./files/resume.pdf"}>Resume</a>
                         </li>
                         <li><a
-                            className="text-emerald-700 brightness-125 dark:text-emerald-400 dark:hover:text-white" href={"./index.html#foot"}>Links</a>
+                            className="dark:text-emerald-400 dark:hover:text-white" href={"./index.html#foot"}>Links</a>
                         </li>
                         <li><a
-                            className="text-emerald-700 brightness-125 dark:text-emerald-400 dark:hover:text-white" href={"./code.html"}>Code</a>
+                            className="dark:text-emerald-400 dark:hover:text-white" href={"./code.html"}>Code</a>
                         </li>
                     </ul>
                 </div>
