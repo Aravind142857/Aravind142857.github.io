@@ -29,24 +29,24 @@ function Header() {
                             points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49"/>
                     </svg>
                     <ul tabIndex="0"
-                        className="menu dropdown-content z-[1] p-2 ml-0 shadow bg-[#003f88] dark:bg-gray-800 text-[#fdc500] rounded-box w-36 mt-4">
+                        className="menu dropdown-content z-50 p-2 ml-0 shadow bg-[#003f88] dark:bg-gray-800 text-[#fdc500] rounded-box w-36 mt-4">
                         <li><a
-                            className="dark:text-emerald-400 dark:hover:text-white" href={"./courses.html"}>Courses</a>
+                            className="dark:text-emerald-400 hover:text-[#003f88] hover:bg-[#fdc500] " href={"./courses.html"}>Courses</a>
                         </li>
                         <li><a
-                            className="dark:text-emerald-400 dark:hover:text-white" href={"./projects.html"}>Projects</a>
+                            className="dark:text-emerald-400 hover:text-[#003f88] hover:bg-[#fdc500] " href={"./projects.html"}>Projects</a>
                         </li>
                         <li><a
-                            className="dark:text-emerald-400 dark:hover:text-white" href={"./skills.html"}>Skills</a>
+                            className="dark:text-emerald-400 hover:text-[#003f88] hover:bg-[#fdc500] " href={"./skills.html"}>Skills</a>
                         </li>
                         <li><a
-                            className="dark:text-emerald-400 dark:hover:text-white" href={"./files/resume.pdf"}>Resume</a>
+                            className="dark:text-emerald-400 hover:text-[#003f88] hover:bg-[#fdc500] " href={"./files/resume.pdf"}>Resume</a>
                         </li>
                         <li><a
-                            className="dark:text-emerald-400 dark:hover:text-white" href={"./index.html#foot"}>Links</a>
+                            className="dark:text-emerald-400 hover:text-[#003f88] hover:bg-[#fdc500] " href={"./index.html#foot"}>Links</a>
                         </li>
                         <li><a
-                            className="dark:text-emerald-400 dark:hover:text-white" href={"./code.html"}>Code</a>
+                            className="dark:text-emerald-400 hover:text-[#003f88] hover:bg-[#fdc500] " href={"./code.html"}>Code</a>
                         </li>
                     </ul>
                 </div>

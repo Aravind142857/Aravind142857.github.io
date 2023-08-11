@@ -158,24 +158,24 @@ function Header() {
     points: "400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49"
   })), /*#__PURE__*/React.createElement("ul", {
     tabIndex: "0",
-    className: "menu dropdown-content z-[1] p-2 ml-0 shadow bg-[#003f88] dark:bg-gray-800 text-[#fdc500] rounded-box w-36 mt-4"
+    className: "menu dropdown-content z-50 p-2 ml-0 shadow bg-[#003f88] dark:bg-gray-800 text-[#fdc500] rounded-box w-36 mt-4"
   }, /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
-    className: "dark:text-emerald-400 dark:hover:text-white",
+    className: "dark:text-emerald-400 hover:text-[#003f88] hover:bg-[#fdc500] ",
     href: "./courses.html"
   }, "Courses")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
-    className: "dark:text-emerald-400 dark:hover:text-white",
+    className: "dark:text-emerald-400 hover:text-[#003f88] hover:bg-[#fdc500] ",
     href: "./projects.html"
   }, "Projects")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
-    className: "dark:text-emerald-400 dark:hover:text-white",
+    className: "dark:text-emerald-400 hover:text-[#003f88] hover:bg-[#fdc500] ",
     href: "./skills.html"
   }, "Skills")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
-    className: "dark:text-emerald-400 dark:hover:text-white",
+    className: "dark:text-emerald-400 hover:text-[#003f88] hover:bg-[#fdc500] ",
     href: "./files/resume.pdf"
   }, "Resume")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
-    className: "dark:text-emerald-400 dark:hover:text-white",
+    className: "dark:text-emerald-400 hover:text-[#003f88] hover:bg-[#fdc500] ",
     href: "./index.html#foot"
   }, "Links")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
-    className: "dark:text-emerald-400 dark:hover:text-white",
+    className: "dark:text-emerald-400 hover:text-[#003f88] hover:bg-[#fdc500] ",
     href: "./code.html"
   }, "Code"))))), /*#__PURE__*/React.createElement("div", {
     className: "w-auto h-auto m-2"
