@@ -9,20 +9,6 @@ function _typeof(obj) {
     return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
   }, _typeof(obj);
 }
-function _defineProperty(obj, key, value) {
-  key = _toPropertyKey(key);
-  if (key in obj) {
-    Object.defineProperty(obj, key, {
-      value: value,
-      enumerable: true,
-      configurable: true,
-      writable: true
-    });
-  } else {
-    obj[key] = value;
-  }
-  return obj;
-}
 function _classCallCheck(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
     throw new TypeError("Cannot call a class as a function");
@@ -187,162 +173,12 @@ var Card = /*#__PURE__*/function (_React$Component) {
   }]);
   return Card;
 }(React.Component);
-var BlogCard = /*#__PURE__*/function (_React$Component2) {
-  _inherits(BlogCard, _React$Component2);
-  var _super2 = _createSuper(BlogCard);
-  function BlogCard(props) {
-    var _this2;
-    _classCallCheck(this, BlogCard);
-    _this2 = _super2.call(this, props);
-    _defineProperty(_assertThisInitialized(_this2), "flip", function () {
-      _this2.setState({
-        flipped: !_this2.state.flipped
-      });
-    });
-    _this2.course = props["course"];
-    _this2.image = props["image"];
-    _this2.semester = props["semester"];
-    _this2.description = props["description"];
-    _this2.courseName = props["courseName"];
-    _this2.state = {
-      flipped: false
-    };
-    _this2.flip = _this2.flip.bind(_assertThisInitialized(_this2));
-    return _this2;
-  }
-  _createClass(BlogCard, [{
-    key: "render",
-    value: function render() {
-      return /*#__PURE__*/React.createElement("div", {
-        onMouseEnter: this.flip,
-        onMouseLeave: this.flip,
-        className: "card-container" + (this.state.flipped ? " flipped" : "")
-      }, /*#__PURE__*/React.createElement(Front, {
-        image: this.image,
-        course: this.course,
-        semester: this.semester,
-        description: this.description,
-        courseName: this.courseName
-      }), /*#__PURE__*/React.createElement(Back, {
-        description: this.description
-      }));
-    }
-  }]);
-  return BlogCard;
-}(React.Component);
-var Front = /*#__PURE__*/function (_React$Component3) {
-  _inherits(Front, _React$Component3);
-  var _super3 = _createSuper(Front);
-  function Front(props) {
-    var _this3;
-    _classCallCheck(this, Front);
-    _this3 = _super3.call(this, props);
-    _this3.image = props["image"];
-    _this3.course = props["course"];
-    _this3.semester = props["semester"];
-    _this3.description = props["description"];
-    _this3.courseName = props["courseName"];
-    return _this3;
-  }
-  _createClass(Front, [{
-    key: "render",
-    value: function render() {
-      return /*#__PURE__*/React.createElement("div", {
-        className: "front"
-      }, /*#__PURE__*/React.createElement(ImageArea, {
-        image: this.image,
-        course: this.course
-      }), /*#__PURE__*/React.createElement(MainArea, {
-        semester: this.semester,
-        description: this.description,
-        courseName: this.courseName
-      }));
-    }
-  }]);
-  return Front;
-}(React.Component);
-var Back = /*#__PURE__*/function (_React$Component4) {
-  _inherits(Back, _React$Component4);
-  var _super4 = _createSuper(Back);
-  function Back(props) {
-    var _this4;
-    _classCallCheck(this, Back);
-    _this4 = _super4.call(this, props);
-    _this4.description = props["description"];
-    return _this4;
-  }
-  _createClass(Back, [{
-    key: "render",
-    value: function render() {
-      return /*#__PURE__*/React.createElement("div", {
-        className: "back"
-      }, this.description);
-    }
-  }]);
-  return Back;
-}(React.Component);
-var ImageArea = /*#__PURE__*/function (_React$Component5) {
-  _inherits(ImageArea, _React$Component5);
-  var _super5 = _createSuper(ImageArea);
-  function ImageArea(props) {
-    var _this5;
-    _classCallCheck(this, ImageArea);
-    _this5 = _super5.call(this, props);
-    _this5.image = props["image"];
-    _this5.course = props["course"];
-    return _this5;
-  }
-  _createClass(ImageArea, [{
-    key: "render",
-    value: function render() {
-      return /*#__PURE__*/React.createElement("div", {
-        className: "image-container"
-      }, /*#__PURE__*/React.createElement("img", {
-        className: "card-image",
-        src: this.image
-      }), /*#__PURE__*/React.createElement("h1", {
-        className: "title"
-      }, " ", this.course));
-    }
-  }]);
-  return ImageArea;
-}(React.Component);
-var MainArea = /*#__PURE__*/function (_React$Component6) {
-  _inherits(MainArea, _React$Component6);
-  var _super6 = _createSuper(MainArea);
-  function MainArea(props) {
-    var _this6;
-    _classCallCheck(this, MainArea);
-    _this6 = _super6.call(this, props);
-    _this6.semester = props["semester"];
-    _this6.description = props["description"];
-    _this6.courseName = props["courseName"];
-    return _this6;
-  }
-  _createClass(MainArea, [{
-    key: "render",
-    value: function render() {
-      return /*#__PURE__*/React.createElement("div", {
-        className: "main-area"
-      }, /*#__PURE__*/React.createElement("div", {
-        className: "blog-post"
-      }, /*#__PURE__*/React.createElement("p", {
-        className: "date"
-      }, this.semester), /*#__PURE__*/React.createElement("p", {
-        className: "blog-content h-auto"
-      }, this.courseName), /*#__PURE__*/React.createElement("p", {
-        className: "read-more"
-      }, "Hover to read more...")));
-    }
-  }]);
-  return MainArea;
-}(React.Component);
-var App = /*#__PURE__*/function (_React$Component7) {
-  _inherits(App, _React$Component7);
-  var _super7 = _createSuper(App);
+var App = /*#__PURE__*/function (_React$Component2) {
+  _inherits(App, _React$Component2);
+  var _super2 = _createSuper(App);
   function App() {
     _classCallCheck(this, App);
-    return _super7.apply(this, arguments);
+    return _super2.apply(this, arguments);
   }
   _createClass(App, [{
     key: "render",
