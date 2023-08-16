@@ -1,118 +1,18 @@
 "use strict";
 
-function _typeof(obj) {
-  "@babel/helpers - typeof";
-
-  return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) {
-    return typeof obj;
-  } : function (obj) {
-    return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
-  }, _typeof(obj);
-}
-function _classCallCheck(instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError("Cannot call a class as a function");
-  }
-}
-function _defineProperties(target, props) {
-  for (var i = 0; i < props.length; i++) {
-    var descriptor = props[i];
-    descriptor.enumerable = descriptor.enumerable || false;
-    descriptor.configurable = true;
-    if ("value" in descriptor) descriptor.writable = true;
-    Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor);
-  }
-}
-function _createClass(Constructor, protoProps, staticProps) {
-  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
-  if (staticProps) _defineProperties(Constructor, staticProps);
-  Object.defineProperty(Constructor, "prototype", {
-    writable: false
-  });
-  return Constructor;
-}
-function _toPropertyKey(arg) {
-  var key = _toPrimitive(arg, "string");
-  return _typeof(key) === "symbol" ? key : String(key);
-}
-function _toPrimitive(input, hint) {
-  if (_typeof(input) !== "object" || input === null) return input;
-  var prim = input[Symbol.toPrimitive];
-  if (prim !== undefined) {
-    var res = prim.call(input, hint || "default");
-    if (_typeof(res) !== "object") return res;
-    throw new TypeError("@@toPrimitive must return a primitive value.");
-  }
-  return (hint === "string" ? String : Number)(input);
-}
-function _inherits(subClass, superClass) {
-  if (typeof superClass !== "function" && superClass !== null) {
-    throw new TypeError("Super expression must either be null or a function");
-  }
-  subClass.prototype = Object.create(superClass && superClass.prototype, {
-    constructor: {
-      value: subClass,
-      writable: true,
-      configurable: true
-    }
-  });
-  Object.defineProperty(subClass, "prototype", {
-    writable: false
-  });
-  if (superClass) _setPrototypeOf(subClass, superClass);
-}
-function _setPrototypeOf(o, p) {
-  _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) {
-    o.__proto__ = p;
-    return o;
-  };
-  return _setPrototypeOf(o, p);
-}
-function _createSuper(Derived) {
-  var hasNativeReflectConstruct = _isNativeReflectConstruct();
-  return function _createSuperInternal() {
-    var Super = _getPrototypeOf(Derived),
-      result;
-    if (hasNativeReflectConstruct) {
-      var NewTarget = _getPrototypeOf(this).constructor;
-      result = Reflect.construct(Super, arguments, NewTarget);
-    } else {
-      result = Super.apply(this, arguments);
-    }
-    return _possibleConstructorReturn(this, result);
-  };
-}
-function _possibleConstructorReturn(self, call) {
-  if (call && (_typeof(call) === "object" || typeof call === "function")) {
-    return call;
-  } else if (call !== void 0) {
-    throw new TypeError("Derived constructors may only return object or undefined");
-  }
-  return _assertThisInitialized(self);
-}
-function _assertThisInitialized(self) {
-  if (self === void 0) {
-    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-  }
-  return self;
-}
-function _isNativeReflectConstruct() {
-  if (typeof Reflect === "undefined" || !Reflect.construct) return false;
-  if (Reflect.construct.sham) return false;
-  if (typeof Proxy === "function") return true;
-  try {
-    Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {}));
-    return true;
-  } catch (e) {
-    return false;
-  }
-}
-function _getPrototypeOf(o) {
-  _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) {
-    return o.__proto__ || Object.getPrototypeOf(o);
-  };
-  return _getPrototypeOf(o);
-}
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); Object.defineProperty(subClass, "prototype", { writable: false }); if (superClass) _setPrototypeOf(subClass, superClass); }
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 //
 //  import {createRoot} from 'react-dom/client';
 //
@@ -133,19 +33,31 @@ var HeaderComponent = /*#__PURE__*/function (_React$Component) {
 }(React.Component);
 function Header() {
   var toggleHandler = function toggleHandler(event) {
-    // if (event.detail === 0) {
-    //     console.log('Keyboard');
-    // } else {
-    //     console.log("mouse");
-    // }
-    var menuOptions = document.getElementById("menu-options");
-    menuOptions.classList.toggle("hidden");
+    if (event.detail === 0) {
+      var key = event.key,
+        keyCode = event.keyCode;
+      if (keyCode === 32 || keyCode === 13) {
+        console.log("space/enter pressed");
+        var menuOptions = document.getElementById("menu-options");
+        menuOptions.classList.toggle("hidden");
+      }
+    } else {
+      var _menuOptions = document.getElementById("menu-options");
+      _menuOptions.classList.toggle("hidden");
+    }
   };
   React.useEffect(function () {
     var hamburger = document.getElementById("hamburger");
     hamburger.addEventListener('mouseup', toggleHandler);
     return function () {
       hamburger.removeEventListener('mouseup', toggleHandler);
+    };
+  }, [toggleHandler]);
+  React.useEffect(function () {
+    var hamburger = document.getElementById("hamburger");
+    hamburger.addEventListener('keyup', toggleHandler);
+    return function () {
+      hamburger.removeEventListener('keyup', toggleHandler);
     };
   }, [toggleHandler]);
   return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
@@ -179,51 +91,51 @@ function Header() {
     className: "menu dropdown-content z-50 p-2 ml-0 shadow bg-[#003f88] dark:bg-gray-800 text-[#fdc500] rounded-box w-36 mt-4 hidden"
   }, /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
     className: "dark:text-emerald-400 hover:text-[#003f88] hover:bg-[#fdc500] ",
-    href: "./courses.html"
+    href: "../courses/index.html"
   }, "Courses")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
     className: "dark:text-emerald-400 hover:text-[#003f88] hover:bg-[#fdc500] ",
-    href: "./projects.html"
+    href: "../projects/index.html"
   }, "Projects")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
     className: "dark:text-emerald-400 hover:text-[#003f88] hover:bg-[#fdc500] ",
-    href: "./skills.html"
+    href: "../skills/index.html"
   }, "Skills")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
     className: "dark:text-emerald-400 hover:text-[#003f88] hover:bg-[#fdc500] ",
-    href: "./files/resume.pdf"
+    href: "../files/resume.pdf"
   }, "Resume")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
     className: "dark:text-emerald-400 hover:text-[#003f88] hover:bg-[#fdc500] ",
-    href: "./index.html#foot"
+    href: "../home/index.html#foot"
   }, "Links")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
     className: "dark:text-emerald-400 hover:text-[#003f88] hover:bg-[#fdc500] ",
-    href: "./code.html"
+    href: "../code/code.html"
   }, "Code"))))), /*#__PURE__*/React.createElement("div", {
     className: "w-auto h-auto m-2"
   }, /*#__PURE__*/React.createElement("a", {
-    href: "./index.html",
+    href: "../home/index.html",
     className: "group flex flex-shrink-0 btn bg-transparent border-none hover:bg-transparent w-auto h-auto p-0"
   }, /*#__PURE__*/React.createElement("img", {
     className: "w-6 h-6 bg-transparent group-hover:shadow-lg group-hover:shadow-[#fdc500]/50 scale-[1.75] hover:scale-150 lg:scale-100 lg:hover:scale-110",
-    src: "images/tile000.png",
+    src: "../images/tile000.png",
     alt: "Home Page"
   }))), /*#__PURE__*/React.createElement("div", {
     className: "w-full m-2 items-center justify-center font-urbanist hidden lg:flex"
   }, /*#__PURE__*/React.createElement("a", {
     className: "btn btn-outline w-auto mx-2 btn-nav",
-    href: "./courses.html"
+    href: "../courses/index.html"
   }, "Courses"), /*#__PURE__*/React.createElement("a", {
     className: "btn btn-outline w-auto mx-2 btn-nav",
-    href: "./projects.html"
+    href: "../projects/index.html"
   }, "Projects"), /*#__PURE__*/React.createElement("a", {
     className: "btn btn-outline w-auto mx-2 btn-nav",
-    href: "./skills.html"
+    href: "../skills/index.html"
   }, "Skills"), /*#__PURE__*/React.createElement("a", {
     className: "btn btn-outline w-auto mx-2 btn-nav",
-    href: "./files/resume.pdf"
+    href: "./.files/resume.pdf"
   }, "Resume"), /*#__PURE__*/React.createElement("a", {
     className: "btn btn-outline w-auto mx-2 btn-nav",
-    href: "./index.html#foot"
+    href: "../home/index.html#foot"
   }, "Links"), /*#__PURE__*/React.createElement("a", {
     className: "btn btn-outline w-auto mx-2 btn-nav",
-    href: "./code.html"
+    href: "../code/code.html"
   }, "Code")), /*#__PURE__*/React.createElement("label", {
     className: "swap swap-rotate"
   }, /*#__PURE__*/React.createElement("input", {

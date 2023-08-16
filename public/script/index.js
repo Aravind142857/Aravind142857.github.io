@@ -15,13 +15,17 @@ function Header() {
 
 
     const toggleHandler = (event) => {
-        // if (event.detail === 0) {
-        //     console.log('Keyboard');
-        // } else {
-        //     console.log("mouse");
-        // }
-        const menuOptions = document.getElementById("menu-options");
-        menuOptions.classList.toggle("hidden");
+         if (event.detail === 0) {
+             const {key, keyCode} = event;
+             if (keyCode === 32 || keyCode === 13) {
+                console.log("space/enter pressed");
+                 const menuOptions = document.getElementById("menu-options");
+                 menuOptions.classList.toggle("hidden");
+             }
+         } else {
+             const menuOptions = document.getElementById("menu-options");
+             menuOptions.classList.toggle("hidden");
+         }
 
     };
     React.useEffect(() => {
@@ -29,6 +33,13 @@ function Header() {
         hamburger.addEventListener('mouseup', toggleHandler);
         return () => {
             hamburger.removeEventListener('mouseup', toggleHandler);
+        };
+    }, [toggleHandler]);
+    React.useEffect(() => {
+        const hamburger = document.getElementById("hamburger");
+        hamburger.addEventListener('keyup', toggleHandler);
+        return () => {
+            hamburger.removeEventListener('keyup', toggleHandler);
         };
     }, [toggleHandler]);
     return (
@@ -50,22 +61,22 @@ function Header() {
                     <ul  id="menu-options" tabIndex="0"
                         className="menu dropdown-content z-50 p-2 ml-0 shadow bg-[#003f88] dark:bg-gray-800 text-[#fdc500] rounded-box w-36 mt-4 hidden">
                         <li><a
-                            className="dark:text-emerald-400 hover:text-[#003f88] hover:bg-[#fdc500] " href={"./courses.html"}>Courses</a>
+                            className="dark:text-emerald-400 hover:text-[#003f88] hover:bg-[#fdc500] " href={"../courses/index.html"}>Courses</a>
                         </li>
                         <li><a
-                            className="dark:text-emerald-400 hover:text-[#003f88] hover:bg-[#fdc500] " href={"./projects.html"}>Projects</a>
+                            className="dark:text-emerald-400 hover:text-[#003f88] hover:bg-[#fdc500] " href={"../projects/index.html"}>Projects</a>
                         </li>
                         <li><a
-                            className="dark:text-emerald-400 hover:text-[#003f88] hover:bg-[#fdc500] " href={"./skills.html"}>Skills</a>
+                            className="dark:text-emerald-400 hover:text-[#003f88] hover:bg-[#fdc500] " href={"../skills/index.html"}>Skills</a>
                         </li>
                         <li><a
-                            className="dark:text-emerald-400 hover:text-[#003f88] hover:bg-[#fdc500] " href={"./files/resume.pdf"}>Resume</a>
+                            className="dark:text-emerald-400 hover:text-[#003f88] hover:bg-[#fdc500] " href={"../files/resume.pdf"}>Resume</a>
                         </li>
                         <li><a
-                            className="dark:text-emerald-400 hover:text-[#003f88] hover:bg-[#fdc500] " href={"./index.html#foot"}>Links</a>
+                            className="dark:text-emerald-400 hover:text-[#003f88] hover:bg-[#fdc500] " href={"../home/index.html#foot"}>Links</a>
                         </li>
                         <li><a
-                            className="dark:text-emerald-400 hover:text-[#003f88] hover:bg-[#fdc500] " href={"./code.html"}>Code</a>
+                            className="dark:text-emerald-400 hover:text-[#003f88] hover:bg-[#fdc500] " href={"../code/code.html"}>Code</a>
                         </li>
                     </ul>
                 </div>
@@ -73,30 +84,30 @@ function Header() {
             </label>
             {/*logo*/}
             <div className="w-auto h-auto m-2">
-                <a href={"./index.html"}
+                <a href={"../home/index.html"}
                    className="group flex flex-shrink-0 btn bg-transparent border-none hover:bg-transparent w-auto h-auto p-0">
                     <img className="w-6 h-6 bg-transparent group-hover:shadow-lg group-hover:shadow-[#fdc500]/50 scale-[1.75] hover:scale-150 lg:scale-100 lg:hover:scale-110"
-                         src={"images/tile000.png"} alt={"Home Page"}></img>
+                         src={"../images/tile000.png"} alt={"Home Page"}></img>
                 </a>
             </div>
             {/*links*/}
             <div className="w-full m-2 items-center justify-center font-urbanist hidden lg:flex">
-                <a className="btn btn-outline w-auto mx-2 btn-nav" href={"./courses.html"}>
+                <a className="btn btn-outline w-auto mx-2 btn-nav" href={"../courses/index.html"}>
                     Courses
                 </a>
-                <a className="btn btn-outline w-auto mx-2 btn-nav" href={"./projects.html"}>
+                <a className="btn btn-outline w-auto mx-2 btn-nav" href={"../projects/index.html"}>
                     Projects
                 </a>
-                <a className="btn btn-outline w-auto mx-2 btn-nav" href={"./skills.html"}>
+                <a className="btn btn-outline w-auto mx-2 btn-nav" href={"../skills/index.html"}>
                     Skills
                 </a>
-                <a className="btn btn-outline w-auto mx-2 btn-nav" href={"./files/resume.pdf"}>
+                <a className="btn btn-outline w-auto mx-2 btn-nav" href={"./.files/resume.pdf"}>
                     Resume
                 </a>
-                <a className="btn btn-outline w-auto mx-2 btn-nav" href={"./index.html#foot"}>
+                <a className="btn btn-outline w-auto mx-2 btn-nav" href={"../home/index.html#foot"}>
                     Links
                 </a>
-                <a className="btn btn-outline w-auto mx-2 btn-nav" href={"./code.html"}>
+                <a className="btn btn-outline w-auto mx-2 btn-nav" href={"../code/code.html"}>
                     Code
                 </a>
             </div>
