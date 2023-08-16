@@ -12,24 +12,43 @@ class HeaderComponent extends React.Component {
 
 
 function Header() {
+
+
+    const toggleHandler = (event) => {
+        // if (event.detail === 0) {
+        //     console.log('Keyboard');
+        // } else {
+        //     console.log("mouse");
+        // }
+        const menuOptions = document.getElementById("menu-options");
+        menuOptions.classList.toggle("hidden");
+
+    };
+    React.useEffect(() => {
+        const hamburger = document.getElementById("hamburger");
+        hamburger.addEventListener('mouseup', toggleHandler);
+        return () => {
+            hamburger.removeEventListener('mouseup', toggleHandler);
+        };
+    }, [toggleHandler]);
     return (
         <div>
         <div className="navbar bg-[#003f88] rounded-lg my-12 py-2 px-8 shadow-xl shadow-black/50 flex justify-between lg:flex-none">
             {/*hamburger*/}
-            <label className="btn btn-circle swap swap-rotate lg:hidden bg-transparent group">
+            <label id="hamburger" className="btn btn-circle swap swap-rotate lg:hidden bg-transparent group">
                 <input type="checkbox"/>
                 <svg className="swap-off fill-white group-hover:fill-black fill-opacity-1 bg-transparent stroke-0" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
                      viewBox="0 0 512 512">
                     <path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z"/>
                 </svg>
-                <div className="swap-on dropdown dropdown-open">
+                <div  className="swap-on dropdown dropdown-open ">
                     <svg className="fill-white group-hover:fill-black" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
                          viewBox="0 0 512 512">
                         <polygon
                             points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49"/>
                     </svg>
-                    <ul tabIndex="0"
-                        className="menu dropdown-content z-50 p-2 ml-0 shadow bg-[#003f88] dark:bg-gray-800 text-[#fdc500] rounded-box w-36 mt-4">
+                    <ul  id="menu-options" tabIndex="0"
+                        className="menu dropdown-content z-50 p-2 ml-0 shadow bg-[#003f88] dark:bg-gray-800 text-[#fdc500] rounded-box w-36 mt-4 hidden">
                         <li><a
                             className="dark:text-emerald-400 hover:text-[#003f88] hover:bg-[#fdc500] " href={"./courses.html"}>Courses</a>
                         </li>
@@ -103,7 +122,7 @@ function Header() {
             </label>
         </div>
         </div>
-    )
+    );
 }
 
 class FooterComponent extends React.Component {

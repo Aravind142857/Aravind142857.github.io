@@ -132,9 +132,26 @@ var HeaderComponent = /*#__PURE__*/function (_React$Component) {
   return HeaderComponent;
 }(React.Component);
 function Header() {
+  var toggleHandler = function toggleHandler(event) {
+    // if (event.detail === 0) {
+    //     console.log('Keyboard');
+    // } else {
+    //     console.log("mouse");
+    // }
+    var menuOptions = document.getElementById("menu-options");
+    menuOptions.classList.toggle("hidden");
+  };
+  React.useEffect(function () {
+    var hamburger = document.getElementById("hamburger");
+    hamburger.addEventListener('mouseup', toggleHandler);
+    return function () {
+      hamburger.removeEventListener('mouseup', toggleHandler);
+    };
+  }, [toggleHandler]);
   return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
     className: "navbar bg-[#003f88] rounded-lg my-12 py-2 px-8 shadow-xl shadow-black/50 flex justify-between lg:flex-none"
   }, /*#__PURE__*/React.createElement("label", {
+    id: "hamburger",
     className: "btn btn-circle swap swap-rotate lg:hidden bg-transparent group"
   }, /*#__PURE__*/React.createElement("input", {
     type: "checkbox"
@@ -147,7 +164,7 @@ function Header() {
   }, /*#__PURE__*/React.createElement("path", {
     d: "M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z"
   })), /*#__PURE__*/React.createElement("div", {
-    className: "swap-on dropdown dropdown-open"
+    className: "swap-on dropdown dropdown-open "
   }, /*#__PURE__*/React.createElement("svg", {
     className: "fill-white group-hover:fill-black",
     xmlns: "http://www.w3.org/2000/svg",
@@ -157,8 +174,9 @@ function Header() {
   }, /*#__PURE__*/React.createElement("polygon", {
     points: "400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49"
   })), /*#__PURE__*/React.createElement("ul", {
+    id: "menu-options",
     tabIndex: "0",
-    className: "menu dropdown-content z-50 p-2 ml-0 shadow bg-[#003f88] dark:bg-gray-800 text-[#fdc500] rounded-box w-36 mt-4"
+    className: "menu dropdown-content z-50 p-2 ml-0 shadow bg-[#003f88] dark:bg-gray-800 text-[#fdc500] rounded-box w-36 mt-4 hidden"
   }, /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
     className: "dark:text-emerald-400 hover:text-[#003f88] hover:bg-[#fdc500] ",
     href: "./courses.html"
