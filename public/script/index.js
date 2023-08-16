@@ -46,41 +46,92 @@ window.onpageshow = function(event) {
             hamburger.removeEventListener('keyup', toggleHandler);
         };
     }, [toggleHandler]);
+    React.useEffect(() => {
+        window.addEventListener('load', function(){
+            if (window.matchMedia &&
+                window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                document.getElementById("theme-switcher").checked = true;
+                console.log("prefers dark");
+            } else {
+                document.getElementById("theme-switcher").checked = false;
+                console.log("prefers light");
+                changeMode();
+            }
+        });
+    }, []);
+    React.useEffect(() => {
+        window.matchMedia('(prefers-color-scheme: dark)')
+        .addEventListener('change',({ matches }) => {
+            if (matches) {
+                console.log("change to dark mode!");
+                document.getElementById("theme-switcher").checked = true;
+                changeMode();
+            } else {
+                console.log("change to light mode!");
+                document.getElementById("theme-switcher").checked = false;
+                changeMode();
+            }
+        });
+    }, []);
+
+    function changeMode() {
+        let html_tag = document.getElementById("html-tag")
+        let box = document.getElementById("theme-switcher");
+        if (box.checked) {
+            if (!html_tag.classList.contains("dark")) {
+                html_tag.classList.add("dark");
+                html_tag.classList.add("bg-black");
+                console.log("dark");
+            } else {
+                console.log("not dark");
+            }
+        }
+        if (!box.checked) {
+            if (html_tag.classList.contains("dark")) {
+                html_tag.classList.remove("dark");
+                console.log("light");
+            } else {
+                console.log("not light");
+            }
+        }
+    }
+
+
     return (
         <div>
-        <div className="navbar bg-[#003f88] rounded-lg my-12 py-2 px-8 shadow-xl shadow-black/50 flex justify-between lg:flex-none">
+        <div className="navbar bg-[#003f88] dark:bg-[#fdc500] rounded-lg my-12 py-2 px-8 shadow-xl shadow-black/50 dark:shadow-yellow-500/50 flex justify-between lg:flex-none">
             {/*hamburger*/}
-            <label id="hamburger" className="btn btn-circle swap swap-rotate lg:hidden bg-transparent group">
-                <input type="checkbox"/>
-                <svg className="swap-off fill-white group-hover:fill-black fill-opacity-1 bg-transparent stroke-0" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+            <label id="hamburger" className="btn btn-circle border-white dark:border-black swap swap-rotate lg:hidden bg-transparent hover:bg-white dark:hover:bg-black hover:border-white dark:hover:border-black group">
+                <input type="checkbox" />
+                <svg className="swap-off fill-white dark:fill-black group-hover:fill-black dark:group-hover:fill-white fill-opacity-1 bg-transparent stroke-0" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
                      viewBox="0 0 512 512">
                     <path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z"/>
                 </svg>
-                <div  className="swap-on dropdown dropdown-open ">
-                    <svg className="fill-white group-hover:fill-black" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                <div  className="swap-on dropdown dropdown-open">
+                    <svg className="fill-white dark:fill-black group-hover:fill-black dark:group-hover:fill-white" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
                          viewBox="0 0 512 512">
                         <polygon
                             points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49"/>
                     </svg>
                     <ul  id="menu-options" tabIndex="0"
-                        className="menu dropdown-content z-50 p-2 ml-0 shadow bg-[#003f88] dark:bg-gray-800 text-[#fdc500] rounded-box w-36 mt-4 hidden">
+                        className="menu dropdown-content z-50 p-2 ml-0 shadow bg-[#003f88] dark:bg-[#fdc500] text-[#fdc500] dark:text-[#003f88] rounded-box w-36 mt-4 hidden">
                         <li><a
-                            className="dark:text-emerald-400 hover:text-[#003f88] hover:bg-[#fdc500] " href={"../courses/"}>Courses</a>
+                            className="hover:text-[#003f88] dark:hover:text-[#fdc500] hover:bg-[#fdc500] dark:hover:bg-[#003f88]" href={"../courses/"}>Courses</a>
                         </li>
                         <li><a
-                            className="dark:text-emerald-400 hover:text-[#003f88] hover:bg-[#fdc500] " href={"../projects/"}>Projects</a>
+                            className="hover:text-[#003f88] dark:hover:text-[#fdc500] hover:bg-[#fdc500] dark:hover:bg-[#003f88]" href={"../projects/"}>Projects</a>
                         </li>
                         <li><a
-                            className="dark:text-emerald-400 hover:text-[#003f88] hover:bg-[#fdc500] " href={"../skills/"}>Skills</a>
+                            className="hover:text-[#003f88] dark:hover:text-[#fdc500] hover:bg-[#fdc500] dark:hover:bg-[#003f88]" href={"../skills/"}>Skills</a>
                         </li>
                         <li><a
-                            className="dark:text-emerald-400 hover:text-[#003f88] hover:bg-[#fdc500] " href={"../files/resume.pdf"}>Resume</a>
+                            className="hover:text-[#003f88] dark:hover:text-[#fdc500] hover:bg-[#fdc500] dark:hover:bg-[#003f88]" href={"../files/resume.pdf"}>Resume</a>
                         </li>
                         <li><a
-                            className="dark:text-emerald-400 hover:text-[#003f88] hover:bg-[#fdc500] " href={"../home/#foot"}>Links</a>
+                            className="hover:text-[#003f88] dark:hover:text-[#fdc500] hover:bg-[#fdc500] dark:hover:bg-[#003f88]" href={"../home/#foot"}>Links</a>
                         </li>
                         <li><a
-                            className="dark:text-emerald-400 hover:text-[#003f88] hover:bg-[#fdc500] " href={"../code/code.html"}>Code</a>
+                            className="hover:text-[#003f88] dark:hover:text-[#fdc500] hover:bg-[#fdc500] dark:hover:bg-[#003f88]" href={"https://github.com/Aravind142857/Aravind142857.github.io"}>Code</a>
                         </li>
                     </ul>
                 </div>
@@ -96,22 +147,22 @@ window.onpageshow = function(event) {
             </div>
             {/*links*/}
             <div className="w-full m-2 items-center justify-center font-urbanist hidden lg:flex">
-                <a className="btn btn-outline w-auto mx-2 btn-nav" href={"../courses/"}>
+                <a className="btn btn-outline w-auto mx-2 btn-nav dark:btn-nav-dark" href={"../courses/"}>
                     Courses
                 </a>
-                <a className="btn btn-outline w-auto mx-2 btn-nav" href={"../projects/"}>
+                <a className="btn btn-outline w-auto mx-2 btn-nav dark:btn-nav-dark" href={"../projects/"}>
                     Projects
                 </a>
-                <a className="btn btn-outline w-auto mx-2 btn-nav" href={"../skills/"}>
+                <a className="btn btn-outline w-auto mx-2 btn-nav dark:btn-nav-dark" href={"../skills/"}>
                     Skills
                 </a>
-                <a className="btn btn-outline w-auto mx-2 btn-nav" href={"../files/resume.pdf"}>
+                <a className="btn btn-outline w-auto mx-2 btn-nav dark:btn-nav-dark" href={"../files/resume.pdf"}>
                     Resume
                 </a>
-                <a className="btn btn-outline w-auto mx-2 btn-nav" href={"../home/#foot"}>
+                <a className="btn btn-outline w-auto mx-2 btn-nav dark:btn-nav-dark" href={"../home/#foot"}>
                     Links
                 </a>
-                <a className="btn btn-outline w-auto mx-2 btn-nav" href={"../code/code.html"}>
+                <a className="btn btn-outline w-auto mx-2 btn-nav dark:btn-nav-dark" href={"https://github.com/Aravind142857/Aravind142857.github.io"}>
                     Code
                 </a>
             </div>
@@ -120,16 +171,16 @@ window.onpageshow = function(event) {
             <label className="swap swap-rotate">
 
                 {/*this hidden checkbox controls the state*/}
-                <input type="checkbox"/>
+                <input id="theme-switcher" type="checkbox" onClick={changeMode}/>
 
                 {/*sun icon*/}
-                <svg className="swap-on fill-white w-10 h-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <svg id="sun" className="swap-on fill-black w-10 h-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <path
                         d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z"/>
                 </svg>
 
                 {/*moon icon*/}
-                <svg className="swap-off fill-white w-10 h-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <svg id="moon" className="swap-off fill-white w-10 h-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <path
                         d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z"/>
                 </svg>
@@ -151,13 +202,13 @@ function Footer() {
     return (
         <div>
             <hr className="h-1 mt-16"></hr>
-            <footer className="footer p-10 bg-transparent text-neutral-content text-black font-bodoni_moda">
+            <footer className="footer p-10 bg-transparent text-neutral-content text-black dark:text-white font-bodoni_moda">
                 <div className="w-full text-center h-full">
-                    <h1 className="text-2xl w-full text-center flex justify-center items-center h-full text-black">Contact
+                    <h1 className="text-2xl w-full text-center flex justify-center items-center h-full text-black dark:text-white">Contact
                         me @</h1>
                 </div>
                 <div>
-                    <span className="footer-title text-black">Social</span>
+                    <span className="footer-title text-black dark:text-white dark:opacity-75">Social</span>
                     <div className="grid grid-flow-col gap-4">
                         {/*InstagramLogo*/}
                         <a href="https://www.instagram.com/aravind_02_10" className="group">
@@ -198,7 +249,7 @@ function Footer() {
                         </a>
                         {/*GitHub logo*/}
                         <a href="https://github.com/Aravind142857" className="group">
-                            <svg className="fill-black group-hover:scale-110" xmlns="http://www.w3.org/2000/svg" width="24"
+                            <svg className="fill-black dark:fill-white group-hover:scale-110" xmlns="http://www.w3.org/2000/svg" width="24"
                                  height="24"
                                  viewBox="0 0 24 24">
                                 <path
@@ -224,37 +275,37 @@ function Footer() {
                         </a>
                         {/*Gmail logo*/}
                     </div>
-                    <span className="footer-title text-black">Mail</span>
-                    <a className="grid grid-flow-col gap-4 text-black opacity-50 group"
+                    <span className="footer-title text-black dark:text-white dark:opacity-75">Mail</span>
+                    <a className="grid grid-flow-col gap-4 text-black dark:text-white opacity-50 dark:opacity-75 group"
                        href="mailto:aravind.s2002@gmail.com">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="fill-current group-hover:scale-110"
+                        <svg xmlns="http://www.w3.org/2000/svg" className="dark:fill-white group-hover:scale-110"
                              xmlnsXlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 256 256"
                              xmlSpace="preserve">
 
                             <defs>
                             </defs>
-                            <g className="fill-[#00509d]"
+                            <g className="fill-black dark:fill-white"
                                style={{stroke: "none", strokeWidth: 0, strokeDasharray: "none", strokeLinecap: "butt", strokeLinejoin: "miter", strokeMiterlimit: 10, fillRule: "nonzero", opacity: 1}}
                                transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)">
                                 <path
                                     d="M 75.546 78.738 H 14.455 C 6.484 78.738 0 72.254 0 64.283 V 25.716 c 0 -7.97 6.485 -14.455 14.455 -14.455 h 61.091 c 7.97 0 14.454 6.485 14.454 14.455 v 38.567 C 90 72.254 83.516 78.738 75.546 78.738 z M 14.455 15.488 c -5.64 0 -10.228 4.588 -10.228 10.228 v 38.567 c 0 5.64 4.588 10.229 10.228 10.229 h 61.091 c 5.64 0 10.228 -4.589 10.228 -10.229 V 25.716 c 0 -5.64 -4.588 -10.228 -10.228 -10.228 H 14.455 z"
-                                    style={{stroke: "none", strokeWidth: 1, strokeDasharray: "none", strokeLinecap: "butt", strokeLinejoin: "miter", strokeMiterlimit: 10, fill: "rgb(29,29,27)", fillRule: "nonzero", opacity: 1}}
+                                    style={{stroke: "none", strokeWidth: 1, strokeDasharray: "none", strokeLinecap: "butt", strokeLinejoin: "miter", strokeMiterlimit: 10, fillRule: "nonzero", opacity: 1}}
                                     transform=" matrix(1 0 0 1 0 0) " strokeLinecap="round"/>
                                 <path
                                     d="M 11.044 25.917 C 21.848 36.445 32.652 46.972 43.456 57.5 c 2.014 1.962 5.105 -1.122 3.088 -3.088 C 35.74 43.885 24.936 33.357 14.132 22.83 C 12.118 20.867 9.027 23.952 11.044 25.917 L 11.044 25.917 z"
-                                    style={{stroke: "none", strokeWidth: 1, strokeDasharray: "none", strokeLinecap: "butt", strokeLinejoin: "miter", strokeMiterlimit: 10, fill: "rgb(29,29,27)", fillRule: "nonzero", opacity: 1}}
+                                    style={{stroke: "none", strokeWidth: 1, strokeDasharray: "none", strokeLinecap: "butt", strokeLinejoin: "miter", strokeMiterlimit: 10, fillRule: "nonzero", opacity: 1}}
                                     transform=" matrix(1 0 0 1 0 0) " strokeLinecap="round"/>
                                 <path
                                     d="M 46.544 57.5 c 10.804 -10.527 21.608 -21.055 32.412 -31.582 c 2.016 -1.965 -1.073 -5.051 -3.088 -3.088 C 65.064 33.357 54.26 43.885 43.456 54.412 C 41.44 56.377 44.529 59.463 46.544 57.5 L 46.544 57.5 z"
-                                    style={{stroke: "none", strokeWidth: 1, strokeDasharray: "none", strokeLinecap: "butt", strokeLinejoin: "miter", strokeMiterlimit: 10, fill: "rgb(29,29,27)", fillRule: "nonzero", opacity: 1}}
+                                    style={{stroke: "none", strokeWidth: 1, strokeDasharray: "none", strokeLinecap: "butt", strokeLinejoin: "miter", strokeMiterlimit: 10, fillRule: "nonzero", opacity: 1}}
                                     transform=" matrix(1 0 0 1 0 0) " strokeLinecap="round"/>
                                 <path
                                     d="M 78.837 64.952 c -7.189 -6.818 -14.379 -13.635 -21.568 -20.453 c -2.039 -1.933 -5.132 1.149 -3.088 3.088 c 7.189 6.818 14.379 13.635 21.568 20.453 C 77.788 69.973 80.881 66.89 78.837 64.952 L 78.837 64.952 z"
-                                    style={{stroke: "none", strokeWidth: 1, strokeDasharray: "none", strokeLinecap: "butt", strokeLinejoin: "miter", strokeMiterlimit: 10, fill: "rgb(29,29,27)", fillRule: "nonzero", opacity: 1}}
+                                    style={{stroke: "none", strokeWidth: 1, strokeDasharray: "none", strokeLinecap: "butt", strokeLinejoin: "miter", strokeMiterlimit: 10, fillRule: "nonzero", opacity: 1}}
                                     transform=" matrix(1 0 0 1 0 0) " strokeLinecap="round"/>
                                 <path
                                     d="M 14.446 68.039 c 7.189 -6.818 14.379 -13.635 21.568 -20.453 c 2.043 -1.938 -1.048 -5.022 -3.088 -3.088 c -7.189 6.818 -14.379 13.635 -21.568 20.453 C 9.315 66.889 12.406 69.974 14.446 68.039 L 14.446 68.039 z"
-                                    style={{stroke: "none", strokeWidth: 1, strokeDasharray: "none", strokeLinecap: "butt", strokeLinejoin: "miter", strokeMiterlimit: 10, fill: "rgb(29,29,27)", fillRule: "nonzero", opacity: 1}}
+                                    style={{stroke: "none", strokeWidth: 1, strokeDasharray: "none", strokeLinecap: "butt", strokeLinejoin: "miter", strokeMiterlimit: 10, fillRule: "nonzero", opacity: 1}}
                                     transform=" matrix(1 0 0 1 0 0) " strokeLinecap="round"/>
                             </g>
                         </svg>

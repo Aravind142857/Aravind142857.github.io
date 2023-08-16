@@ -5,6 +5,9 @@
     .btn-nav {
         @apply border-[#fdc500] text-[#fdc500] hover:bg-[#fdc500] hover:text-[#00296b];
     }
+    .btn-nav-dark {
+        @apply border-[#00296b] text-[#00296b] hover:bg-[#00296b] hover:text-[#fdc500];
+    }
     .swap-flip {
         transition-duration: 700ms;
     }

@@ -132,7 +132,7 @@ var Card = /*#__PURE__*/function (_React$Component) {
     key: "render",
     value: function render() {
       return /*#__PURE__*/React.createElement("div", {
-        className: "flex h-fit w-fit items-center justify-center bg-slate-100"
+        className: "flex h-fit w-fit items-center justify-center bg-slate-100 rounded-xl"
       }, /*#__PURE__*/React.createElement("div", {
         className: "group h-96 w-80 [perspective:1000px]"
       }, /*#__PURE__*/React.createElement("div", {

@@ -165,15 +165,62 @@ function Header() {
       hamburger.removeEventListener('keyup', toggleHandler);
     };
   }, [toggleHandler]);
+  React.useEffect(function () {
+    window.addEventListener('load', function () {
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.getElementById("theme-switcher").checked = true;
+        console.log("prefers dark");
+      } else {
+        document.getElementById("theme-switcher").checked = false;
+        console.log("prefers light");
+        changeMode();
+      }
+    });
+  }, []);
+  React.useEffect(function () {
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function (_ref) {
+      var matches = _ref.matches;
+      if (matches) {
+        console.log("change to dark mode!");
+        document.getElementById("theme-switcher").checked = true;
+        changeMode();
+      } else {
+        console.log("change to light mode!");
+        document.getElementById("theme-switcher").checked = false;
+        changeMode();
+      }
+    });
+  }, []);
+  function changeMode() {
+    var html_tag = document.getElementById("html-tag");
+    var box = document.getElementById("theme-switcher");
+    if (box.checked) {
+      if (!html_tag.classList.contains("dark")) {
+        html_tag.classList.add("dark");
+        html_tag.classList.add("bg-black");
+        console.log("dark");
+      } else {
+        console.log("not dark");
+      }
+    }
+    if (!box.checked) {
+      if (html_tag.classList.contains("dark")) {
+        html_tag.classList.remove("dark");
+        console.log("light");
+      } else {
+        console.log("not light");
+      }
+    }
+  }
   return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
-    className: "navbar bg-[#003f88] rounded-lg my-12 py-2 px-8 shadow-xl shadow-black/50 flex justify-between lg:flex-none"
+    className: "navbar bg-[#003f88] dark:bg-[#fdc500] rounded-lg my-12 py-2 px-8 shadow-xl shadow-black/50 dark:shadow-yellow-500/50 flex justify-between lg:flex-none"
   }, /*#__PURE__*/React.createElement("label", {
     id: "hamburger",
-    className: "btn btn-circle swap swap-rotate lg:hidden bg-transparent group"
+    className: "btn btn-circle border-white dark:border-black swap swap-rotate lg:hidden bg-transparent hover:bg-white dark:hover:bg-black hover:border-white dark:hover:border-black group"
   }, /*#__PURE__*/React.createElement("input", {
     type: "checkbox"
   }), /*#__PURE__*/React.createElement("svg", {
-    className: "swap-off fill-white group-hover:fill-black fill-opacity-1 bg-transparent stroke-0",
+    className: "swap-off fill-white dark:fill-black group-hover:fill-black dark:group-hover:fill-white fill-opacity-1 bg-transparent stroke-0",
     xmlns: "http://www.w3.org/2000/svg",
     width: "32",
     height: "32",
@@ -181,9 +228,9 @@ function Header() {
   }, /*#__PURE__*/React.createElement("path", {
     d: "M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z"
   })), /*#__PURE__*/React.createElement("div", {
-    className: "swap-on dropdown dropdown-open "
+    className: "swap-on dropdown dropdown-open"
   }, /*#__PURE__*/React.createElement("svg", {
-    className: "fill-white group-hover:fill-black",
+    className: "fill-white dark:fill-black group-hover:fill-black dark:group-hover:fill-white",
     xmlns: "http://www.w3.org/2000/svg",
     width: "32",
     height: "32",
@@ -193,25 +240,25 @@ function Header() {
   })), /*#__PURE__*/React.createElement("ul", {
     id: "menu-options",
     tabIndex: "0",
-    className: "menu dropdown-content z-50 p-2 ml-0 shadow bg-[#003f88] dark:bg-gray-800 text-[#fdc500] rounded-box w-36 mt-4 hidden"
+    className: "menu dropdown-content z-50 p-2 ml-0 shadow bg-[#003f88] dark:bg-[#fdc500] text-[#fdc500] dark:text-[#003f88] rounded-box w-36 mt-4 hidden"
   }, /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
-    className: "dark:text-emerald-400 hover:text-[#003f88] hover:bg-[#fdc500] ",
+    className: "hover:text-[#003f88] dark:hover:text-[#fdc500] hover:bg-[#fdc500] dark:hover:bg-[#003f88]",
     href: "../courses/"
   }, "Courses")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
-    className: "dark:text-emerald-400 hover:text-[#003f88] hover:bg-[#fdc500] ",
+    className: "hover:text-[#003f88] dark:hover:text-[#fdc500] hover:bg-[#fdc500] dark:hover:bg-[#003f88]",
     href: "../projects/"
   }, "Projects")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
-    className: "dark:text-emerald-400 hover:text-[#003f88] hover:bg-[#fdc500] ",
+    className: "hover:text-[#003f88] dark:hover:text-[#fdc500] hover:bg-[#fdc500] dark:hover:bg-[#003f88]",
     href: "../skills/"
   }, "Skills")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
-    className: "dark:text-emerald-400 hover:text-[#003f88] hover:bg-[#fdc500] ",
+    className: "hover:text-[#003f88] dark:hover:text-[#fdc500] hover:bg-[#fdc500] dark:hover:bg-[#003f88]",
     href: "../files/resume.pdf"
   }, "Resume")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
-    className: "dark:text-emerald-400 hover:text-[#003f88] hover:bg-[#fdc500] ",
+    className: "hover:text-[#003f88] dark:hover:text-[#fdc500] hover:bg-[#fdc500] dark:hover:bg-[#003f88]",
     href: "../home/#foot"
   }, "Links")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
-    className: "dark:text-emerald-400 hover:text-[#003f88] hover:bg-[#fdc500] ",
-    href: "../code/code.html"
+    className: "hover:text-[#003f88] dark:hover:text-[#fdc500] hover:bg-[#fdc500] dark:hover:bg-[#003f88]",
+    href: "https://github.com/Aravind142857/Aravind142857.github.io"
   }, "Code"))))), /*#__PURE__*/React.createElement("div", {
     className: "w-auto h-auto m-2"
   }, /*#__PURE__*/React.createElement("a", {
@@ -224,34 +271,38 @@ function Header() {
   }))), /*#__PURE__*/React.createElement("div", {
     className: "w-full m-2 items-center justify-center font-urbanist hidden lg:flex"
   }, /*#__PURE__*/React.createElement("a", {
-    className: "btn btn-outline w-auto mx-2 btn-nav",
+    className: "btn btn-outline w-auto mx-2 btn-nav dark:btn-nav-dark",
     href: "../courses/"
   }, "Courses"), /*#__PURE__*/React.createElement("a", {
-    className: "btn btn-outline w-auto mx-2 btn-nav",
+    className: "btn btn-outline w-auto mx-2 btn-nav dark:btn-nav-dark",
     href: "../projects/"
   }, "Projects"), /*#__PURE__*/React.createElement("a", {
-    className: "btn btn-outline w-auto mx-2 btn-nav",
+    className: "btn btn-outline w-auto mx-2 btn-nav dark:btn-nav-dark",
     href: "../skills/"
   }, "Skills"), /*#__PURE__*/React.createElement("a", {
-    className: "btn btn-outline w-auto mx-2 btn-nav",
+    className: "btn btn-outline w-auto mx-2 btn-nav dark:btn-nav-dark",
     href: "../files/resume.pdf"
   }, "Resume"), /*#__PURE__*/React.createElement("a", {
-    className: "btn btn-outline w-auto mx-2 btn-nav",
+    className: "btn btn-outline w-auto mx-2 btn-nav dark:btn-nav-dark",
     href: "../home/#foot"
   }, "Links"), /*#__PURE__*/React.createElement("a", {
-    className: "btn btn-outline w-auto mx-2 btn-nav",
-    href: "../code/code.html"
+    className: "btn btn-outline w-auto mx-2 btn-nav dark:btn-nav-dark",
+    href: "https://github.com/Aravind142857/Aravind142857.github.io"
   }, "Code")), /*#__PURE__*/React.createElement("label", {
     className: "swap swap-rotate"
   }, /*#__PURE__*/React.createElement("input", {
-    type: "checkbox"
+    id: "theme-switcher",
+    type: "checkbox",
+    onClick: changeMode
   }), /*#__PURE__*/React.createElement("svg", {
-    className: "swap-on fill-white w-10 h-10",
+    id: "sun",
+    className: "swap-on fill-black w-10 h-10",
     xmlns: "http://www.w3.org/2000/svg",
     viewBox: "0 0 24 24"
   }, /*#__PURE__*/React.createElement("path", {
     d: "M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z"
   })), /*#__PURE__*/React.createElement("svg", {
+    id: "moon",
     className: "swap-off fill-white w-10 h-10",
     xmlns: "http://www.w3.org/2000/svg",
     viewBox: "0 0 24 24"
@@ -278,13 +329,13 @@ function Footer() {
   return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("hr", {
     className: "h-1 mt-16"
   }), /*#__PURE__*/React.createElement("footer", {
-    className: "footer p-10 bg-transparent text-neutral-content text-black font-bodoni_moda"
+    className: "footer p-10 bg-transparent text-neutral-content text-black dark:text-white font-bodoni_moda"
   }, /*#__PURE__*/React.createElement("div", {
     className: "w-full text-center h-full"
   }, /*#__PURE__*/React.createElement("h1", {
-    className: "text-2xl w-full text-center flex justify-center items-center h-full text-black"
+    className: "text-2xl w-full text-center flex justify-center items-center h-full text-black dark:text-white"
   }, "Contact me @")), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("span", {
-    className: "footer-title text-black"
+    className: "footer-title text-black dark:text-white dark:opacity-75"
   }, "Social"), /*#__PURE__*/React.createElement("div", {
     className: "grid grid-flow-col gap-4"
   }, /*#__PURE__*/React.createElement("a", {
@@ -356,7 +407,7 @@ function Footer() {
     href: "https://github.com/Aravind142857",
     className: "group"
   }, /*#__PURE__*/React.createElement("svg", {
-    className: "fill-black group-hover:scale-110",
+    className: "fill-black dark:fill-white group-hover:scale-110",
     xmlns: "http://www.w3.org/2000/svg",
     width: "24",
     height: "24",
@@ -386,20 +437,20 @@ function Footer() {
     },
     d: "M0,0v455h455V0H0z M141.522,378.002H74.016V174.906h67.506V378.002z M107.769,147.186h-0.446C84.678,147.186,70,131.585,70,112.085c0-19.928,15.107-35.087,38.211-35.087 c23.109,0,37.31,15.159,37.752,35.087C145.963,131.585,131.32,147.186,107.769,147.186z M385,378.002h-67.524V269.345 c0-27.291-9.756-45.92-34.195-45.92c-18.664,0-29.755,12.543-34.641,24.693c-1.776,4.34-2.24,10.373-2.24,16.459v113.426h-67.537 c0,0,0.905-184.043,0-203.096H246.4v28.779c8.973-13.807,24.986-33.547,60.856-33.547c44.437,0,77.744,29.02,77.744,91.398V378.002 z"
   }))))), /*#__PURE__*/React.createElement("span", {
-    className: "footer-title text-black"
+    className: "footer-title text-black dark:text-white dark:opacity-75"
   }, "Mail"), /*#__PURE__*/React.createElement("a", {
-    className: "grid grid-flow-col gap-4 text-black opacity-50 group",
+    className: "grid grid-flow-col gap-4 text-black dark:text-white opacity-50 dark:opacity-75 group",
     href: "mailto:aravind.s2002@gmail.com"
   }, /*#__PURE__*/React.createElement("svg", {
     xmlns: "http://www.w3.org/2000/svg",
-    className: "fill-current group-hover:scale-110",
+    className: "dark:fill-white group-hover:scale-110",
     xmlnsXlink: "http://www.w3.org/1999/xlink",
     width: "24",
     height: "24",
     viewBox: "0 0 256 256",
     xmlSpace: "preserve"
   }, /*#__PURE__*/React.createElement("defs", null), /*#__PURE__*/React.createElement("g", {
-    className: "fill-[#00509d]",
+    className: "fill-black dark:fill-white",
     style: {
       stroke: "none",
       strokeWidth: 0,
@@ -420,7 +471,6 @@ function Footer() {
       strokeLinecap: "butt",
       strokeLinejoin: "miter",
       strokeMiterlimit: 10,
-      fill: "rgb(29,29,27)",
       fillRule: "nonzero",
       opacity: 1
     },
@@ -435,7 +485,6 @@ function Footer() {
       strokeLinecap: "butt",
       strokeLinejoin: "miter",
       strokeMiterlimit: 10,
-      fill: "rgb(29,29,27)",
       fillRule: "nonzero",
       opacity: 1
     },
@@ -450,7 +499,6 @@ function Footer() {
       strokeLinecap: "butt",
       strokeLinejoin: "miter",
       strokeMiterlimit: 10,
-      fill: "rgb(29,29,27)",
       fillRule: "nonzero",
       opacity: 1
     },
@@ -465,7 +513,6 @@ function Footer() {
       strokeLinecap: "butt",
       strokeLinejoin: "miter",
       strokeMiterlimit: 10,
-      fill: "rgb(29,29,27)",
       fillRule: "nonzero",
       opacity: 1
     },
@@ -480,7 +527,6 @@ function Footer() {
       strokeLinecap: "butt",
       strokeLinejoin: "miter",
       strokeMiterlimit: 10,
-      fill: "rgb(29,29,27)",
       fillRule: "nonzero",
       opacity: 1
     },
