@@ -3,10 +3,12 @@
     <properties>
       <sourceFilesUrls>
         <item url="file://$PROJECT_DIR$/dist/babel.config.json.js" />
+        <item url="file://$PROJECT_DIR$/dist/tailwind.config.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
       <root url="file://$PROJECT_DIR$/dist/babel.config.json.js" />
+      <root url="file://$PROJECT_DIR$/dist/tailwind.config.js" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
