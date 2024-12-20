@@ -202,7 +202,7 @@ function Footer() {
     return (
         <div>
             <hr className="h-1 mt-16"></hr>
-            <footer className="footer p-10 bg-transparent text-neutral-content text-black dark:text-white font-bodoni_moda">
+            <footer className="footer p-10 bg-transparent text-neutral-content dark:text-white font-bodoni_moda">
                 <div className="w-full text-center h-full">
                     <h1 className="text-2xl w-full text-center flex justify-center items-center h-full text-black dark:text-white">Contact
                         me @</h1>
@@ -309,7 +309,10 @@ function Footer() {
                                     transform=" matrix(1 0 0 1 0 0) " strokeLinecap="round"/>
                             </g>
                         </svg>
-                        <h1 className="font-bold text-current selection:bg-yellow-700 selection:text-white">aravind.s2002@gmail.com</h1>
+                        <div className="flex flex-col ">
+                        <h1 className="font-bold text-current selection:bg-yellow-700 selection:text-white">aravind@aravinds.me</h1>
+                            <h1 className="font-bold text-current selection:bg-yellow-700 selection:text-white">aravind.s2002@gmail.com</h1>
+                        </div>
                     </a>
                 </div>
             </footer>
