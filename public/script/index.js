@@ -276,8 +276,8 @@ function Footer() {
                         {/*Gmail logo*/}
                     </div>
                     <span className="footer-title text-black dark:text-white dark:opacity-75">Mail</span>
-                    <a className="grid grid-flow-col gap-4 text-black dark:text-white opacity-50 dark:opacity-75 group"
-                       href="mailto:aravind.s2002@gmail.com">
+                    <div className="grid grid-flow-col gap-4 text-black dark:text-white opacity-50 dark:opacity-75 group">
+                        {/* href="mailto:aravind.s2002@gmail.com"> */}
                         <svg xmlns="http://www.w3.org/2000/svg" className="dark:fill-white group-hover:scale-110"
                              xmlnsXlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 256 256"
                              xmlSpace="preserve">
@@ -309,11 +309,15 @@ function Footer() {
                                     transform=" matrix(1 0 0 1 0 0) " strokeLinecap="round"/>
                             </g>
                         </svg>
-                        <div className="flex flex-col ">
-                        <h1 className="font-bold text-current selection:bg-yellow-700 selection:text-white">aravind@aravinds.me</h1>
+                        {/* <div className="flex flex-col "> */}
+                        <a href="mailto:aravind.s2002@gmail.com">
+                            <h1 className="font-bold text-current selection:bg-yellow-700 selection:text-white">aravind@aravinds.me</h1>
+                        </a> 
+                        <a href="mailto:aravind@aravinds.me">
                             <h1 className="font-bold text-current selection:bg-yellow-700 selection:text-white">aravind.s2002@gmail.com</h1>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
+                    
                 </div>
             </footer>
         </div>
